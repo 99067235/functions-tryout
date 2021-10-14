@@ -23,8 +23,8 @@ def stelen():
     else:
         langzaam()
 
-
-
+def gameoverBeveiliger():
+    print("Game Over! Er komt een beveiliger langs en die ziet dat je een beveiliger knock-out hebt geslagen!")
 
 def wcpapier():
     print("Goed gedaan! De beveiligers zijn bezig met de bewusteloze bewaker, dus kun je ongemerkt over de muur klimmen!")
@@ -53,6 +53,7 @@ def weg():
 
 
 
+
 def staaf():
     print("Je hebt nu een staaf, hiermee kan je een bewaker knock-out slaan!")
     print("Maar eerst moet je nog zorgen dat je celdeur open gaat, zodat je er een knock-out kan slaan, en bijvoorbeeld sleutels kan afpakken.")
@@ -62,11 +63,10 @@ def staaf():
     if antwoord == "nu":
         weg()
     else:
-        print("Game Over! Er komt een beveiliger langs en die ziet dat je een beveiliger knock-out hebt geslagen!")
+        gameoverBeveiliger()
 
-
-
-        
+def doorgerend():
+    print("Game Over! Je bent in een keer doorgerend, dus is het opgevallen bij de bewakers en ben je betrapt.")
 
 def wachten():
     print("Oke, als je aan het wachten bent, eet je ondertussen nog een stukje taart. Na 5 minuten zijn de beveiligers weg. Je kunt nu beginnen met vijlen.  ")
@@ -88,8 +88,6 @@ def vijl():
     else:
         bewakers()
 
-def doorgerend():
-    print("Game Over! Je bent in een keer doorgerend, dus is het opgevallen bij de bewakers en ben je betrapt.")
 
 def bewakers():
     input("Je komt nu bij de bewakers, je hebt de vijl nog bij je. Probeer je om de bewakers te vermoorden met de vijl? J/N ")
@@ -130,42 +128,5 @@ antwoord = input("Ga je eerst een stukje taart eten, of meteen met de staaf prob
 
 if antwoord == "taart":
     taart()
-    if antwoord == "wachten":
-        wachten()
-        if antwoord <= 1:
-            vijl()
-            if antwoord != 2:
-                doorgerend()
-            else:
-                bewakers()
-                if antwoord == "J":
-                    vluchtauto()
-                else:
-                    muur()
-        else:
-            print("Game Over! Je heb telang gedaan over het bellen, dus heeft een bewaker je gehoord!")
-    else:
-        print("Game Over! Je begint met vijlen, maar dat horen de bewakers die voor je deur staan. Dus ben je helaas betrapt. ")
 else:
     staaf()
-    if antwoord == "nu":
-        weg()
-        if antwoord == "nooduitgang":
-            nooduitgang()
-        else:
-           wcpapier()
-            if antwoord == "wcpapier":
-                wcpapier()
-                antwoord = input("Ga je rennen, of bel je een vluchtauto? rennen/bellen ")
-                if antwoord == "bellen":
-                    print("Game Over! Je bent betrapt omdat je zo lang staat te bellen en wachten op een vluchtauto!")
-                else:
-                    antwoord = input("Steel je nu een auto of ga je rennen tot je thuis bent? stelen/rennen ")
-                    if antwoord == "stelen":
-                        print("Gefeliciteerd! Je bent ontsnapt! Je hebt een vluchtauto gestolen, dus kun je zelf een eind vluchten en de kans zo klein mogelijk maken dat je gepakt wordt! ")
-                    else:
-                        print("Game Over! Je bent te langzaam als je gaat rennen dus ben je gepakt!")
-            else:
-                print("Game Over! Je wordt gezien omdat je zo lang buiten je cel bent, omdat je moet wachten op een helikopter!")
-    else:
-        print("Game Over! Er komt een beveiliger langs en die ziet dat je een beveiliger knock-out hebt geslagen!")
