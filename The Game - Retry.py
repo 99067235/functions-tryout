@@ -1,8 +1,28 @@
 import time
 
+def wachten():
+    print("Oke, als je aan het wachten bent, eet je ondertussen nog een stukje taart. Na 5 minuten zijn de beveiligers weg. Je kunt nu beginnen met vijlen.  ")
+    print("Nadat je 1 tralie hebt doorgevijld, heb je een gat gecreëerd, die net groot genoeg is om er doorheen te kunnen.")
+    print("Als je door het gat naar buiten bent geklommen, kijk je even om je heen, maar je ziet niemand")
+    print("Je moet nog een vluchtauto regelen, daarvoor toevallig heb je een telefoon bij die in je cel lag van de vorige gevangene.")
+    antwoord = int(input("Hoeveel minuten bel je?"))
+    if antwoord <= 1:
+        vijl()
+    else:
+        print("Game Over! Je begint met vijlen, maar dat horen de bewakers die voor je deur staan. Dus ben je helaas betrapt. ")
+    
+
 def taart():
     print("Als je aan het eten bent, kom je ineens iets hards tegen, het blijkt een vijl te zijn. Wat je met deze vijl kunt doen, is de tralies doorvijlen.  ")
     antwoord = input("Er staan net twee beveiligers voor je cel te praten, wacht je tot ze weg zijn, of ga je meteen vijlen? wachten/vijlen  ")
+    if antwoord == "wachten":
+        wachten()
+    else:
+        vijlen()
+
+def vijlen():
+        print("Game Over! Je begint met vijlen, maar dat horen de bewakers die voor je deur staan. Dus ben je helaas betrapt. ")
+    
 
 def nooduitgang():
     print("Gefeliciteerd! je bent nu ontsnapt!")
@@ -68,16 +88,7 @@ def staaf():
 def doorgerend():
     print("Game Over! Je bent in een keer doorgerend, dus is het opgevallen bij de bewakers en ben je betrapt.")
 
-def wachten():
-    print("Oke, als je aan het wachten bent, eet je ondertussen nog een stukje taart. Na 5 minuten zijn de beveiligers weg. Je kunt nu beginnen met vijlen.  ")
-    print("Nadat je 1 tralie hebt doorgevijld, heb je een gat gecreëerd, die net groot genoeg is om er doorheen te kunnen.")
-    print("Als je door het gat naar buiten bent geklommen, kijk je even om je heen, maar je ziet niemand")
-    print("Je moet nog een vluchtauto regelen, daarvoor toevallig heb je een telefoon bij die in je cel lag van de vorige gevangene.")
-    antwoord = int(input("Hoeveel minuten bel je?"))
-    if antwoord <= 1:
-        vijl()
-    else:
-        print("Game Over! Je begint met vijlen, maar dat horen de bewakers die voor je deur staan. Dus ben je helaas betrapt. ")
+
 
 def vijl():
     print("Je ziet bewakers bij de poort staan van het terrein van de gevangenis.")
@@ -90,19 +101,19 @@ def vijl():
 
 
 def bewakers():
-    input("Je komt nu bij de bewakers, je hebt de vijl nog bij je. Probeer je om de bewakers te vermoorden met de vijl? J/N ")
+    input("Je komt nu bij de bewakers, je hebt de vijl nog bij je. Probeer je om de bewakers te vermoorden met de vijl? J/N ") .upper()
     if antwoord == "J":
         vluchtauto()
     else:
         muur()
 
 def muur():
-    input("Nu kun je proberen om over de muur heen te klimmen zonder gezien te worden. Doe je dat? J/N ")
+    antwoord = input("Nu kun je proberen om over de muur heen te klimmen zonder gezien te worden. Doe je dat? J/N ").upper()
     if antwoord == "J":
         print("Game Over! De muur is te hoog om erover heen te klimmen! Je bent nu betrapt omdat je teveel op bent gevallen.")
     else:
         print("Je klimt niet over de muur heen, dus nu weet je niet waar je heen moet om het terrein af te komen.")
-        print("Game Over! Je staat nu al te lang stil dus wordt je betrapt!")
+        print("")
 
 
 
